@@ -7,6 +7,11 @@ fn sum_as_string(a: usize, b: usize) -> PyResult<String> {
 }
 
 #[pyfunction]
+fn sub_as_string(a: usize, b: usize) -> PyResult<String> {
+    Ok((a - b).to_string())
+}
+
+#[pyfunction]
 fn mult_as_string(a: usize, b: usize) -> PyResult<String> {
     Ok((a * b).to_string())
 }
@@ -15,6 +20,7 @@ fn mult_as_string(a: usize, b: usize) -> PyResult<String> {
 #[pymodule]
 fn rust_module(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_function(wrap_pyfunction!(sum_as_string, m)?)?;
+    m.add_function(wrap_pyfunction!(sub_as_string, m)?)?;
     m.add_function(wrap_pyfunction!(mult_as_string, m)?)?;
     Ok(())
 }
