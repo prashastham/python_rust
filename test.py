@@ -23,10 +23,10 @@ def main():
 
     # Test with python's built-in sum for comparison.
     start_time = time.time()
-    res5 = sum(arr)
+    res5 = np.sum(arr)
     end_time = time.time()
-    print(f"The sum of the array using Python's built-in sum is: {res5}")
-    print(f"Time taken to sum the array using Python's built-in sum: {end_time - start_time:.4f} seconds")
+    print(f"The sum of the array using Numpy's built-in sum is: {res5}")
+    print(f"Time taken to sum the array using Numpy's built-in sum: {end_time - start_time:.4f} seconds")
 
 if __name__ == "__main__":
     main()
